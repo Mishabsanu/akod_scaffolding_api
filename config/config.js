@@ -7,7 +7,7 @@ const getConfigs = () => {
       logStyle: "dev",
     },
     cors: {
-      origin: ["http://localhost:3000"],
+      origin: ["http://localhost:3000","https://www.akodscaffolding.com"],
       credentials: true,
     },
     server: {
