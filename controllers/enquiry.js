@@ -65,8 +65,8 @@ export const DeleteEnquiry = catchAsync(async (req, res) => {
 });
 
 export const ListEnquiry = catchAsync(async (req, res) => {
-    console.log('mmmmmmmmm');
-    
+  console.log("mmmmmmmmm");
+
   const enquiryList = await EnquiryModel.find({ deleted_at: null });
   return res.status(200).json({
     result: enquiryList,
