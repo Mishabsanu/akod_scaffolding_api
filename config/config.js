@@ -7,7 +7,12 @@ const getConfigs = () => {
       logStyle: "dev",
     },
     cors: {
-      origin: ["http://localhost:3000","https://www.akodscaffolding.com"],
+      origin: [
+        "http://localhost:3000",
+        "http://localhost:3000/admin-akod",
+        "https://www.akodscaffolding.com",
+        "https://www.akodscaffolding.com/admin-akod",
+      ],
       credentials: true,
     },
     server: {
