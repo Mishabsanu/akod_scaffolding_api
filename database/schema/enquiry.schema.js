@@ -30,6 +30,10 @@ const EnquirySchema = new mongoose.Schema({
     required: [true, "Message is required"],
     trim: true,
   },
+  file: {
+    type: String,
+    default: null,
+  },
   status: {
     type: String,
     enum: ["open", "responded", "closed"],

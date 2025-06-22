@@ -8,10 +8,19 @@ import mongo_service from "./database/mongo.service.js";
 import userRouter from "./routes/user.routes.js";
 import enquiryRouter from "./routes/enquiry.routes.js";
 import { globalErrorHandler } from "./errors/globalErrorHandler.js";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+
 const Configs = getConfigs();
 mongo_service();
-
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+app.use(express.urlencoded({ extended: true }));
+app.use("/uploads", express.static("./uploads"));
+app.use(express.static(__dirname));
+
 app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.send("working fineeeeeeeeee");
